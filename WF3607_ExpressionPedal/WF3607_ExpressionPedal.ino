@@ -19,6 +19,10 @@ void loop() {
 
   // Convert 10 bit to 7 bit
   tempAnalog = map(tempAnalog, 0, 1023, 0, 127);
+
+  // Invert the values due to wiring
+  tempAnalog = map(tempAnalog, 0, 127, 127, 0);
+
   tempAnalog = constrain(tempAnalog, 0, 127);
 
   // Send pedal status
